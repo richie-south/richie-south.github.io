@@ -55,6 +55,11 @@ article{
 
 }
 
+iframe{
+	width: 800px;
+	height: 900px;
+}
+
 #faq{
 	margin-left: -400px;
 }

@@ -55,7 +55,14 @@ article{
 
 }
 
+#faq{
+	margin-left: -400px;
+}
 
+#question dt{
+	  font-weight: bold;
+
+}
 footer{
 
 	border: 2px solid black;
@@ -67,6 +74,14 @@ footer{
    height:30px;
    width:100%;
 
+	background-color: white;
+}
+#smetal{
+	height: 24px;
+}
+
+
+footer div{
 	background-image: url("../img/background_animated_twinkle_color_stars.gif");
 	background-repeat: repeat-x;
 }

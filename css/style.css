@@ -1,134 +1,194 @@
-html, body{
+html{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
 	margin: 0;
 	padding: 0;
 }
 
-header{
-	text-align: center;
-	background-color: aqua;
+.profileImage{
+	width: 164px;
+	height: 164px;
+	max-width: 164px;
+	max-height: 164px;
+	background-image: url("../img/profileImg.jpg");
+	background-size: 100% 100%;
+  	background-repeat: no-repeat;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 50%;
+	background-color: #EA142C;
 }
 
-header h1{
-	font-size: 44px;
+ul{
+	padding: 0;
+}
+
+li {
 	margin: 0;
+	padding: 0;
+	border-right: 1px solid black;
+	display: inline;
+	padding: 5px;
 }
 
-
-
-#menu{
-	font-size: 24px;
-	background-color: blanchedalmond;
+li:nth-child(1){
+	border-left: 1px solid black;
 }
 
-#menu img{
-	height: 24px;
+main{
+	position:absolute;
+    height:100%;
+    width:100%;
 }
 
-#img_smal{
-	width: 60px;
-}
-
-.folow{
-  
-  position: absolute;
-  margin: 0px;
-  
-  
-  width: 110px;
-  height: 40px;
-
-  background-image: url("../img/justclick.gif");
-  background-repeat: repeat-x;
-}
-
-.dim{
+#head{
+	background:#EA142C;
+    position:fixed;
+    color:red;
+    top:0;
 	width: 100%;
-	background-image: url("../img/diamonds.gif");
-	background-repeat: repeat-x;
+	height: 250px;
+	padding-top: 100px;
+	background-color: #EA142C;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#head h1{
+	padding: 0;
+	margin: 0;
+	font-size: 5rem;
+	display: inherit;
+	color: white;
+	transition: all 500ms ease;
+}
+
+#head a{
+	width: auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #FFFFFF;
+    background: #EA142C;
+	border: solid #FFFFFF 1px;
+    font-size: 14px;
+    padding: 8px 28px 8px 28px;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+
+#head a:hover{
+	background: #FFFFFF;
+	color: #000000;
+    text-decoration: none;
+}
+
+#head a:focus{
+	outline-color: #FFFFFF;
+	background: #FFFFFF;
+	color: #000000;
+    text-decoration: none;
+}
+
+.panels {
+    position:relative;
+    width:100%;
+}
+
+#content{
+   	margin-top:300px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #4B494B;
+   	background:white;
+   	box-shadow: 0 -6px 4px -6px grey;
+}
+
+#content a:link {
+    color: #FF142E;
+    text-decoration: none;
+}
+
+#content a:visited {
+    color: #FF142E;
+    text-decoration: none;
+}
+
+#content a:hover {
+    color: #4B494B;
+    text-decoration: none;
+}
+
+#content a:active {
+    color: #000;
+}
+
+#knowledge{
+	padding-left: 20px;
 }
 
 article{
-	padding-top: 14px;
-	width: 800px;
+	width: 500px;
 	margin: auto;
-	padding-bottom: 10px;
-
 }
 
-#sdadg{
-	margin-bottom: 200px;
-}
-
-.profile{
-	width: 300px;
-	float:left;
-	border: 2px solid black;
-	margin: 4px;
-}
-
-.profilePic{
-	width: 250px;
-}
-
-iframe{
-	width: 800px;
-	height: 900px;
-}
-
-#camel{
-	  width: 60px;
-}
-
-#down{
-	width: 240px;
-}
-
-#faq{
-	margin-left: -400px;
-
-}
-
-#question dt{
-	  font-weight: bold;
-}
-
-#question{
-	margin-bottom: 60px;
-}
-footer{
-
-	border: 2px solid black;
-	text-align: center;
-
-	position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-
-	background-color: white;
-}
-#smetal{
-	height: 24px;
+h1{
+	font-weight: 800;
+	font-size: 34px;
+	color: #EA142C;
+	margin-bottom: 0px;
+	margin-left: -6px;
 }
 
 
-footer div{
-	background-image: url("../img/background_animated_twinkle_color_stars.gif");
-	background-repeat: repeat-x;
-}
-
-.ad{
-	  float: left;
-  margin: 10px;
-  margin-bottom: 50px;
-}
-
-#spons{
+h2{
+	font-weight: 800;
 	font-size: 24px;
+	color: #EA142C;
+	margin-bottom: 0px;
+	display: initial;
 }
 
-#wow_hed{
-	height: 80px;
-  	margin-top: -20px;
+h3{
+	font-weight: 800;
+	color: #EA142C;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+footer{
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	padding: 4px;
+	color: #FFFFFF;
+	background-color: #EA142C;
+}
+
+#project{
+
+}
+
+.project{
+	margin-bottom: 8px;
+	margin-top: 8px;
+	padding: 4px;
+	border: 2px solid #4B494B;
+	color: black;
+}
+
+.project p{
+	color: #4B494B;
+}
+
+.project h1{
+	border: 1px solid white;
+}
+
+#pageRocket{
+
 }

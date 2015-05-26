@@ -1,34 +1,38 @@
 'use strict';
 
-function getMouseCoords(e) {
-  var e = e || window.event;
-  //document.getElementById('msg').innerHTML = e.clientX + ', ' + 
-   //        e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
-}
+var scr = scr || {};
 
+scr.init = function(){
+    scr.menu();
+};
 
-var followCursor = (function() {
-  var s = document.createElement('div');
-  s.setAttribute('class', 'folow');
+scr.menu = function(){
+    var max, percent;
+    var header = document.querySelector('header');
+    var imageDiv = document.querySelector('.profileImage');
+    
+    imageDiv.style.height = '1px';
+    imageDiv.style.width = '1px';
+    imageDiv.style.visibility = 'hidden';
 
-  return {
-    init: function() {
-      document.body.appendChild(s);
-    },
+    window.addEventListener('scroll', function(e){
+        max = document.body.scrollHeight - innerHeight;
+        percent = (pageYOffset / max) * 100;
+        
+        imageDiv.style.height = percent*8 +'px';
+        imageDiv.style.width = percent*8 +'px';
+        imageDiv.style.visibility = ''
 
-    run: function(e) {
-      var e = e || window.event;
-      s.style.left  = (e.clientX - 20) + 'px';
-      s.style.top = (e.clientY - 50) + 'px';
-      getMouseCoords(e);
-    }
-  };
-}());
+        if(percent === 0){
+            imageDiv.style.height = '1px';
+            imageDiv.style.width = '1px';
+            imageDiv.style.visibility = 'hidden';
+        }else if(percent > 30){
+        }
+    });
+};
 
-window.onload = function() {
-  //followCursor.init();
-  //document.body.onmousemove = followCursor.run;
-}
+window.onLoad = new scr.init;
 
 
 

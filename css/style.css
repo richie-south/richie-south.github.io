@@ -128,7 +128,7 @@ main{
 }
 
 #knowledge{
-	padding-left: 20px;
+	/*padding-left: 20px;*/
 }
 
 article{
@@ -167,6 +167,7 @@ footer{
 	padding: 4px;
 	color: #FFFFFF;
 	background-color: #EA142C;
+	line-height: 24px;
 }
 
 #project{
@@ -177,13 +178,14 @@ footer{
 	margin-bottom: 8px;
 	margin-top: 8px;
 	padding: 4px;
-	border: 2px solid #4B494B;
+	border-left: 1px solid #4B494B;
 	color: black;
 }
 
-.project p{
+.project p, span{
 	color: #4B494B;
 }
+
 
 .project h1{
 	border: 1px solid white;

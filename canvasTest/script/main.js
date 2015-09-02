@@ -54,6 +54,7 @@ scr.star.update = function(that){
             scr.star.createStar(that.draw, that.starPos[i].posX, that.starPos[i].posY, that.starPos[i].size, 0, 2);
         }
         setTimeout(update, 0);
+        //console.log(connectedNodes);
         connectedNodes = 0;
     }
 
@@ -120,7 +121,7 @@ scr.star.toCanvas = function (canvas){
     canvas.stroke();
 };
 
-window.onLoad = new scr.init;
+window.onload = scr.init;
 
 
 /*

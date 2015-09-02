@@ -101,11 +101,13 @@ main{
 
 #content{
    	margin-top:300px;
+	margin-bottom: 80px;
 	padding-top: 8px;
-	padding-bottom: 8px;
+	/*padding-bottom: 8px;*/
 	color: #4B494B;
    	background:white;
-   	box-shadow: 0 -6px 4px -6px grey;
+   	/*box-shadow: 0 -6px 4px -6px grey;*/
+	box-shadow: 0px -6px 4px -6px gray, 0px 6px 4px -6px gray;
 }
 
 #content a:link {
@@ -160,14 +162,29 @@ h3{
 	margin-bottom: 0px;
 }
 
+#fot{
+    position:fixed;
+    bottom:0;
+	width: 100%;
+	z-index: -1;
+
+}
+
 footer{
-	height: 20px;
+	height: 80px;
 	font-size: 12px;
 	text-align: center;
 	padding: 4px;
 	color: #FFFFFF;
 	background-color: #EA142C;
-	line-height: 24px;
+}
+
+footer span{
+	position: fixed;
+	bottom: 4px;
+	left: 46%;
+	font-size: 12px;
+	color: #FFFFFF;
 }
 
 #project{

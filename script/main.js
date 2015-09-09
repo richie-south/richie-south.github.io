@@ -5,6 +5,7 @@ var scr = scr || {};
 scr.init = function(){
     //scr.menu();
     //scr.profileImage();
+
 };
 
 scr.profileImage = function(){

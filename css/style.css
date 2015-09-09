@@ -79,6 +79,7 @@ main{
     padding: 8px 28px 8px 28px;
     text-decoration: none;
     transition: all 500ms ease;
+
 }
 
 #head a:hover{
@@ -99,15 +100,24 @@ main{
     width:100%;
 }
 
+@keyframes headerHeight {
+    from {margin-top: -20px;}
+    to {margin-top: 300px;}
+}
+
 #content{
-   	margin-top:300px;
-	margin-bottom: 80px;
+	margin-bottom: 24px;
 	padding-top: 8px;
-	/*padding-bottom: 8px;*/
+
 	color: #4B494B;
    	background:white;
-   	/*box-shadow: 0 -6px 4px -6px grey;*/
+
 	box-shadow: 0px -6px 4px -6px gray, 0px 6px 4px -6px gray;
+
+	animation-name: headerHeight;
+    animation-duration: 0.8s;
+	animation-timing-function:ease-in;
+	animation-fill-mode: forwards;
 }
 
 #content a:link {
@@ -171,7 +181,7 @@ h3{
 }
 
 footer{
-	height: 80px;
+	height: 20px;
 	font-size: 12px;
 	text-align: center;
 	padding: 4px;

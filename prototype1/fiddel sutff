@@ -1,0 +1,204 @@
+/*HTML*/
+
+<div class="main">
+    <div class="menu">
+        <div class="colorWrap"></div>
+    </div>
+    <div class="content">
+        <ul class="list">
+            <li style="background-color: #14e8b3">
+                <div>1</div>
+            </li>
+            <li style="background-color: #EA142C">
+                <div>2</div>
+            </li>
+            <li style="background-color: #cf14e8">
+                <div>3</div>
+            </li>
+            <li style="background-color: #e8e114">
+                <div>4</div>
+            </li>
+            <li style="background-color: #14e846">
+                <div>5</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+/*CSS*/
+.main {
+    height:400px;
+    width:300px;
+    background-color:white;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+@keyframes colorChange {
+  0% {
+       border-radius: 50%;
+  }
+  90%{
+    border-radius: 0%;
+  }
+
+  100% {
+    width:100%;
+    height: 100%;
+  }
+}
+
+.menu {
+    height: 120px;
+    border: 1px solid green;
+}
+
+.colorWrap{
+    width:100%;
+    height:100%;
+}
+.colorChange{
+  border-radius: 0%;
+  width: 40px;
+  height: 40px;
+
+
+   animation-name: colorChange;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.content {
+}
+.list {
+    list-style-type:none;
+    padding:0;
+}
+.list li {
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid;
+}
+.list li:nth-child(even) {
+    /*background-color: #EA142C;*/
+}
+.list li:nth-child(odd) {
+    background-color: #14e8b3;
+}
+.ball {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 4px 4px 2px -2px rgba(0, 0, 0, 0.4);
+    animation-name: example;
+    animation-duration: 1.4s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+}
+/*  */
+ @keyframes example {
+    from {
+        /*left: 10px;*/
+    }
+    50% {
+        left: 20px;
+    }
+    100% {
+        left: 20px;
+        top:5px;
+    }
+}
+
+
+
+/*JS*/
+/*Ball*/
+
+function foo() {
+    var elems = document.querySelectorAll("li");
+
+    for (var i = 0; i < elems.length; i++) {
+        bar(i);
+    }
+
+    function bar(j) {
+        elems[j].addEventListener("click", function (event) {
+            //console.log(j);
+            move(elems[j], event);
+        }, false);
+    }
+}
+
+function move(elem, event) {
+    //elem.style.left = "60px"
+    var obj = new makeObject();
+    var elemColor = getElemColor(elem);
+    setObjecColor(obj.ball, elemColor);
+
+    var pos = getObjectPosition(event);
+    setObjectPosition(obj.ball, pos);
+    appendObject(elem, obj.ball);
+
+    elem.addEventListener('webkitAnimationEnd', function(event){
+        //console.log("hej");
+        try{
+        	elem.removeChild(obj.ball);
+			headerColor(elemColor);
+        }catch(err){
+        	console.log("err");
+        }
+
+    }, false );
+}
+
+function setObjecColor(obj, color) {
+    obj.style.backgroundColor = color;
+}
+
+function getElemColor(elem) {
+    return elem.style.backgroundColor;
+}
+
+function setObjectPosition(obj, pos) {
+    obj.style.top = pos.y + "px";
+    obj.style.left = pos.x + "px";
+}
+
+function getObjectPosition(event) {
+    return { x:event.clientX, y:event.clientY };
+}
+
+function appendObject(elem, object) {
+    elem.appendChild(object);
+}
+
+function makeObject(i) {
+    this.ball = document.createElement("div");
+    this.ball.setAttribute("class", "ball");
+    //return div;
+}
+
+function headerColor(color){
+	var header = document.querySelector(".colorWrap");
+
+    header.style.backgroundColor = color;
+    header.classList.add("colorChange");
+
+
+     header.addEventListener('webkitAnimationEnd', function(e){
+        try{
+            console.log("slut!!")
+			header.classList.remove("colorChange");
+        }catch(err){
+        	console.log("err2");
+        }
+    }, false );
+}
+
+/*header*/
+
+
+
+foo();

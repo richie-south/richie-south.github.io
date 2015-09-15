@@ -1,10 +1,6 @@
-
-
-
 #head{
 	height: 300px;
 	padding-top: 66px;
-
 }
 
 #head h1 {
@@ -21,10 +17,7 @@
     width: 80%;
     height: 40px;
     margin-bottom: 5px;
-
-
     line-height: 40px;
-
 }
 
 @keyframes headerHeight {
@@ -35,7 +28,6 @@
 #content{
 	margin-bottom: 24px;
 	padding-top: 8px;
-
 }
 
 article{
@@ -45,4 +37,9 @@ article{
 article > *{
     margin-left: 8px;
     margin-right: 8px;
+}
+
+
+footer span{
+	left: 40%;
 }

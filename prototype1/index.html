@@ -7,29 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main">
-        <div class="menu">
-            <div class="colorWrap"></div>
+    <div  class="main">
+        <div id="mixing-palette"  class="menu">
+            <div  class="colorWrap"></div>
         </div>
         <div class="content">
             <div id="mixing-palette"></div>
             <ul class="list">
-                <li style="background-color: rgb(0,0,0)">
+                <!--<li style="background-color: rgb(0,0,0)">
                     <div></div>
                 </li>
                 <li style="background-color: rgb(255,255,255)">
                     <div></div>
-                </li>
-                <li onclick="change(32,0,0)" style="background-color: rgb(255,0,0)">
+                </li>-->
+                <li id="red"  style="background-color: rgb(255,0,0)">
                     <div></div>
                 </li>
                 <!--<li style="background-color: rgb(0,255,0)">
                     <div></div>
                 </li>-->
-                <li onclick="change(0,0,32)" style="background-color: rgb(0,0,255)">
+                <li id="blue"  style="background-color: rgb(0,0,255)">
                     <div></div>
                 </li>
-                <li onclick="change(0,32,0)" style="background-color: rgb(255,255,0)">
+                <li id="yellow"  style="background-color: rgb(255,255,0)">
                     <div></div>
                 </li>
                 <!--<li style="background-color: rgb(0,255,255)">
@@ -42,11 +42,11 @@
         </div>
     </div>
 
-    <script src="colormix.js"></script>
+    <!--<script src="colormix.js"></script>
     <script src="rygColorMix.js"></script>
     <script src="rgbToryb.js"></script>
-    <script src="myMix.js"></script>
-    <script src="oneColor.js"></script>
+<script src="oneColor.js"></script>-->
+    <script src="model/myMix.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

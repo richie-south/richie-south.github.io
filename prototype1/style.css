@@ -2,14 +2,15 @@
 ::-moz-selection { background: transparent; }
 
 
-#mixing-palette{
-    width: 100%;
-    height: 100px;
-}
 
 html, body{
     margin: 0;
     padding: 0;
+
+    -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main {
@@ -94,7 +95,7 @@ html, body{
 li{
     float: left;
     display: inline;
-    width: 20%;
+    width: 33.33333333333%;
 }
 
 .ball {

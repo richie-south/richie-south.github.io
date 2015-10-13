@@ -1,30 +1,34 @@
 /*Ball*/
-document.oncontextmenu = new Function("return false;");
+"use strict";
+//document.oncontextmenu = new Function("return false;");
 
 var doClick = true;
 var newHeaderColor;
 
-function getElems() {
-    var elems = document.querySelectorAll("li");
-    for (var i = 0; i < elems.length; i++) {
-        eventListner(i);
-    }
+var id = {
+    red: function(){
+        change(15/*id.presure*/, 15, 15); },
+    yellow: function(){
+        change(0, id.presure, 0); },
+    blue: function(){
+        change(0, 0, id.presure); },
 
-    function eventListner(j) {
-        /*elems[j].addEventListener("click", function (event) {
-            if(doClick){
-                doClick = false;
-                var obj = new makeObject(40, 40);
-                objectProp(elems[j], event, obj);
-            }
-        }, false);*/
-        downPress(elems[j]);
-    }
+    presure: 1
+};
+
+function getElems() {
+
+    var red = document.querySelector("#red");
+    var yellow = document.querySelector("#yellow");
+    var blue = document.querySelector("#blue");
+    downPress(red, id.red);
+    downPress(yellow, id.yellow);
+    downPress(blue, id.blue);
 }
 
-function downPress(elem){
+function downPress(elem, change){
     var pressTimer;
-    var size = {max: 100, size: 0, standard: 20};
+    var size = {max: 100, size: 0, standard: 32};
     var pos = {x: 0, y: 0};
     var obj = {};
     var isDownPressing = false;
@@ -43,6 +47,7 @@ function downPress(elem){
         if(!doClick){
             return false;
         }
+        id.presure = 32;
         doClick = false;
         isDownPressing = true;
 
@@ -51,23 +56,30 @@ function downPress(elem){
         setObjectPosition(obj.ball, pos.x, pos.y);
         objectProp(elem, obj);
 
+        moveBallAnimationEnd(elem, obj, change);
+
         pressTimer = setInterval(function(){
             size.size++;
             if(size.size > size.max){
                 setObjectSize(obj.ball, size.max, size.max);
                 size.size = size.max;
+                id.presure = size.size;
+                //moveBallAnimationEnd(elem, obj, change, size.size);
             }else{
                 setObjectSize(obj.ball, size.size, size.size);
+                id.presure = size.size;
+                //moveBallAnimationEnd(elem, obj, change, size.size);
             }
             setObjectPosition(obj.ball, pos.x, pos.y);
-        }, 40);
+            //moveBallAnimationEnd(elem, obj, change);
+
+        }, 20);
     }
 
     function mouseUp(e){
         clearInterval(pressTimer);
         isDownPressing = false;
         size.size = 0;
-
         obj.ball.classList.add("ballAnim");
     }
 
@@ -97,21 +109,26 @@ function objectProp(elem, obj) {
     var elemColor = getElemColor(elem);
     setObjecColor(obj.ball, elemColor);
     appendObject(elem, obj.ball);
+}
+
+function moveBallAnimationEnd(elem, obj, change){
+    var elemColor = getElemColor(elem);
 
     elem.addEventListener('webkitAnimationEnd', function(event){
         try{
-        	elem.removeChild(obj.ball);
-			headerColor(elemColor);
-            newHeaderColor = mixColors(elemColor);
+            elem.removeChild(obj.ball);
+            headerColor(elemColor, change);
             doClick = true;
         }catch(err){
         }
     }, false);
 }
 
+
 function setObjecColor(obj, color) {
     obj.style.backgroundColor = color;
 }
+
 
 function getElemColor(elem) {
     return elem.style.backgroundColor;
@@ -137,7 +154,7 @@ function makeObject(width, height) {
     this.ball.setAttribute("id", width);
 }
 
-function headerColor(color){
+function headerColor(color, change){
 	var header = document.querySelector(".colorWrap");
     header.style.backgroundColor = color;
     header.classList.add("colorChange");
@@ -145,10 +162,9 @@ function headerColor(color){
     header.addEventListener('webkitAnimationEnd', function(e){
         try{
 			header.classList.remove("colorChange");
-            var behindHeader = document.querySelector(".menu");
-            behindHeader.style.backgroundColor = color;
-            setHeaderColor(newHeaderColor);
+            change();
             removeFronColor();
+
         }catch(err){
         }
     }, false );
@@ -166,44 +182,6 @@ function getHeaderColor(){
     return document.querySelector(".menu").style.backgroundColor;
 }
 
-function mixColors(color, size){
-    size = size || 20;
-    var activeColor = getHeaderColor();
-
-    if(activeColor === ""){
-        return false;
-    }
-
-    var activeRGB = rgbStringToArray(activeColor);
-    var colorRGB = rgbStringToArray(color);
-
-    // rybColorMix
-    var c;
-    var a = rgb2ryb(stringArrayToNumber(activeRGB));
-    var b = rgb2ryb(stringArrayToNumber(colorRGB));
-
-
-    c = rybColorMixer.mix(b, a);
-    var d = rybColorMixer.rybToRgb(c);
-    console.log(d);
-
-    return "rgb("+d[0]+","+d[1]+","+d[2]+")";
-    //var a = new one.color.CMYK(<cyan>, <magenta>, <yellow>, <black>[, <alpha>]);
-    //console.log(a);
-
-}
-
-function rgbStringToArray(string){
-    return string.match(/\d+/g);
-}
-
-function stringArrayToNumber(arr){
-    var result = [];
-    for (var i = 0; i < arr.length; i++) {
-        result.push(Number(arr[i]));
-    }
-    return result;
-}
 
 window.onload = function(){
     getElems();

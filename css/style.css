@@ -2,6 +2,7 @@ html{
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
+	background-color: #EA142C;
 }
 
 body{
@@ -14,7 +15,7 @@ body{
 	height: 164px;
 	max-width: 164px;
 	max-height: 164px;
-	background-image: url("../img/profileImg.jpg");
+	background-image: url("../img/profileImg_opt.jpg");
 	background-size: 100% 100%;
   	background-repeat: no-repeat;
 	margin: auto;
@@ -118,6 +119,7 @@ main{
     animation-duration: 0.8s;
 	animation-timing-function:ease-in;
 	animation-fill-mode: forwards;
+
 }
 
 #content a:link {
@@ -220,4 +222,8 @@ footer span{
 
 #pageRocket{
 
+}
+
+.pMargin{
+	margin: 4px;
 }

@@ -24,7 +24,8 @@
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
 
-        <link rel="stylesheet" type="text/css" href="css/style.min_v1.css" media="all">
+        <link rel="stylesheet" type="text/css" href="css/style.min_v2.css" media="all">
+        <link rel="stylesheet" type="text/css" href="css/800px.min_v1.css" media="only screen and (max-width: 820px)">
         <link rel="stylesheet" media="only screen
       and (min-device-width : 320px)
       and (max-device-width : 480px)" type="text/css" href="css/mobile.min_v1.css">
@@ -41,7 +42,14 @@
 	    	</header>
 	    	<section id="content" class="panels">
 		    	<article>
-		    		<div class="profileImage"></div>
+                    <div id="menuWrap">
+                        <div id="menu">
+                                <div class="profileImage"></div>
+                                <div class="leftMenuButton socialBtn hide"><a href="https://github.com/rs222kn" >Github</a></div>
+                                <div class="rightMenuButton socialBtn hide"><a href="https://twitter.com/rick_9412">Twitter</a></div>
+                        </div>
+                    </div>
+
 		    		<h1>INFO</h1>
 		    		<div>Jag heter Richard Södeman och pluggar webbprogrammering på <a href="http://lnu.se/">linnéuniversitetet</a> med examensår 2016.</div>
 		    		<section id="knowledge">
@@ -60,13 +68,20 @@
 					<div>Jag kommer från <a href="http://www.stockholm.se/">Stockholm</a> men är just nu bosat i <a href="http://www.kalmar.se/">Kalmar</a> på obestämd tid.</div>
 					<section>
 						<h1>Projekt</h1>
-                        <p>Här listas alla projekt jag har varit med och framför under mitt liv.</p>
+                        <p>Här listas projekt jag har varit med och framför under mitt liv.</p>
+                        <section class="project" id="spotifyMusic">
+                            <h2>Music Swipe</h2>
+                            <p>Music  Swipe är ett projekt i kursen <a href="https://coursepress.lnu.se/kurs/webbteknik-ii/">Webbteknik II</a> på linnéuniversitetet</p>
+                            <p>Projektet är en mashup i from av en webbapplikation och den blandar data mellan Twitter och Spotify på ett Tinder liknande sätt</p>
+                            <span>URL:<a href="http://www.richardsoderman.se/1dv449projekt/">Webbsida</a></span>
+                        </section>
                         <section class="project" id="pageRocket">
                             <h2>Page Rocket</h2>
                             <p>Page Rocket är ett projekt jag skapade under första året på linnéuniversitetet i kursen <a href="https://coursepress.lnu.se/kurs/individuellt-mjukvaruutvecklingsprojekt/">Individuellt mjukvaruutvecklingsprojekt.</a></p>
                             <p>Projektet är ett chrome pluggin som sparar atriklar från hemsidor så användaren kan läsa dom när och vart som helst.</p>
                             <span>URL:<a href="https://chrome.google.com/webstore/detail/page-rocket/ocmaooaijjohhedjcpnjcnclbpcddnng">chrome store</a></span>
                         </section>
+
 					</section>
 					<section>
 						<h1>Kontakt</h1>
@@ -76,5 +91,7 @@
 	    	</section>
 	    	<footer id="fot" class="panels"><span>©richard söderman</span></footer>
 	    </main>
+
+        <script src="script/main_v1.0.min.js"></script>
     </body>
 </html>

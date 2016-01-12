@@ -22,6 +22,7 @@ body{
 	margin-top: 20px;
 	border-radius: 50%;
 	background-color: #EA142C;
+	transition: all 500ms ease;
 }
 
 ul{
@@ -226,4 +227,83 @@ footer span{
 
 .pMargin{
 	margin: 4px;
+}
+
+#menuWrap{
+	margin-top: 20px;
+	height: 164px;
+}
+
+#menu{
+
+}
+
+.menuFixed{
+	background-color: white;
+	box-shadow: 0px -6px 4px -6px gray, 0px 6px 4px -6px gray;
+	margin: initial;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 4px;
+	padding-top: 4px;
+
+}
+.menuFixed .menuControlls{
+	margin: auto;
+
+}
+
+.menuFixed .profileImage{
+
+	margin: auto;
+	width: 64px;
+	height: 64px;
+	max-width: 64px;
+	max-height: 64px;
+	transition: all 200ms ease;
+}
+
+.leftMenuButton{
+	position: fixed;
+    left: 16px;
+	top:28px;
+}
+
+.rightMenuButton{
+	position: fixed;
+    right: 16px;
+	top:28px;
+}
+
+.socialBtn a{
+	width: auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #FFFFFF !important;
+    background: #EA142C;
+	border: solid #FFFFFF 1px;
+    font-size: 14px;
+    padding: 8px 28px 8px 28px;
+    text-decoration: none !important;
+    transition: all 500ms ease;
+}
+
+.socialBtn a:hover{
+	background: #FFFFFF;
+	color: #000000;
+    text-decoration: none;
+}
+
+.socialBtn a:focus{
+	outline-color: #FFFFFF;
+	background: #FFFFFF;
+	color: #000000;
+    text-decoration: none;
+}
+
+.hide{
+	display:none;
 }

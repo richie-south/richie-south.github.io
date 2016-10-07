@@ -23,44 +23,20 @@ body{
 	border-radius: 50%;
 	background-color: #EA142C;
 	transition: all 500ms ease;
+	border: 1px solid white;
 }
 
-ul{
-	padding: 0;
-}
-
-li {
-	margin: 0;
-	padding: 0;
-	border-right: 1px solid black;
-	display: inline;
-	padding: 5px;
-}
-
-li:nth-child(1){
-	border-left: 1px solid black;
-}
-
-main{
-	position:absolute;
-    height:100%;
-    width:100%;
-}
-
-#head{
-	background:#EA142C;
-    position:fixed;
-    color:red;
-    top:0;
+#content{
+  position:fixed;
+  top:0;
+	color: #FFFFFF;
 	width: 100%;
 	height: 250px;
 	padding-top: 100px;
-	background-color: #EA142C;
 	text-align: center;
-	text-transform: uppercase;
 }
 
-#head h1{
+#content h1{
 	padding: 0;
 	margin: 0;
 	font-size: 5rem;
@@ -69,86 +45,32 @@ main{
 	transition: all 500ms ease;
 }
 
-#head a{
+#content a{
 	width: auto;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    color: #FFFFFF;
-    background: #EA142C;
-	border: solid #FFFFFF 1px;
-    font-size: 14px;
-    padding: 8px 28px 8px 28px;
-    text-decoration: none;
-    transition: all 500ms ease;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	color: #FFFFFF;
+	background: #EA142C;
+	border: 1px solid #FFFFFF;
+	font-size: 14px;
+	padding: 8px 28px 8px 28px;
+	text-decoration: none;
+	transition: all 200ms ease;
 
 }
 
-#head a:hover{
+#content a:hover{
 	background: #FFFFFF;
 	color: #000000;
-    text-decoration: none;
+  text-decoration: none;
 }
 
-#head a:focus{
+#content a:focus{
 	outline-color: #FFFFFF;
 	background: #FFFFFF;
 	color: #000000;
-    text-decoration: none;
-}
-
-.panels {
-    position:relative;
-    width:100%;
-}
-
-@keyframes headerHeight {
-    from {margin-top: -20px;}
-    to {margin-top: 300px;}
-}
-
-#content{
-	margin-bottom: 24px;
-	padding-top: 8px;
-	padding-bottom: 1px;
-	color: #4B494B;
-   	background:white;
-
-	box-shadow: 0px -6px 4px -6px gray, 0px 6px 4px -6px gray;
-
-	animation-name: headerHeight;
-    animation-duration: 0.8s;
-	animation-timing-function:ease-in;
-	animation-fill-mode: forwards;
-
-}
-
-#content a:link {
-    color: #FF142E;
-    text-decoration: none;
-}
-
-#content a:visited {
-    color: #FF142E;
-    text-decoration: none;
-}
-
-#content a:hover {
-    color: #4B494B;
-    text-decoration: none;
-}
-
-#content a:active {
-    color: #000;
-}
-
-#knowledge{
-	/*padding-left: 20px;*/
-}
-
-article{
-	width: 500px;
-	margin: auto;
+  text-decoration: none;
 }
 
 h1{
@@ -157,153 +79,4 @@ h1{
 	color: #EA142C;
 	margin-bottom: 0px;
 	margin-left: -6px;
-}
-
-
-h2{
-	font-weight: 800;
-	font-size: 24px;
-	color: #EA142C;
-	margin-bottom: 0px;
-	display: initial;
-}
-
-h3{
-	font-weight: 800;
-	color: #EA142C;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-
-#fot{
-    position:fixed;
-    bottom:0;
-	width: 100%;
-	z-index: -1;
-
-}
-
-footer{
-	height: 20px;
-	font-size: 12px;
-	text-align: center;
-	padding: 4px;
-	color: #FFFFFF;
-	background-color: #EA142C;
-}
-
-footer span{
-	position: fixed;
-	bottom: 4px;
-	left: 46%;
-	font-size: 12px;
-	color: #FFFFFF;
-}
-
-#project{
-
-}
-
-.project{
-	margin-bottom: 8px;
-	margin-top: 8px;
-	padding: 4px;
-	border-left: 1px solid #4B494B;
-	color: black;
-}
-
-.project p, span{
-	color: #4B494B;
-}
-
-
-.project h1{
-	border: 1px solid white;
-}
-
-#pageRocket{
-
-}
-
-.pMargin{
-	margin: 4px;
-}
-
-#menuWrap{
-	margin-top: 20px;
-	height: 164px;
-}
-
-#menu{
-
-}
-
-.menuFixed{
-	background-color: white;
-	box-shadow: 0px -6px 4px -6px gray, 0px 6px 4px -6px gray;
-	margin: initial;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding-bottom: 4px;
-	padding-top: 4px;
-
-}
-.menuFixed .menuControlls{
-	margin: auto;
-
-}
-
-.menuFixed .profileImage{
-
-	margin: auto;
-	width: 64px;
-	height: 64px;
-	max-width: 64px;
-	max-height: 64px;
-	transition: all 500ms ease;
-}
-
-.leftMenuButton{
-	position: fixed;
-    left: 16px;
-	top:28px;
-}
-
-.rightMenuButton{
-	position: fixed;
-    right: 16px;
-	top:28px;
-}
-
-.socialBtn a{
-	width: auto;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    color: #FFFFFF !important;
-    background: #EA142C;
-	border: solid #FFFFFF 1px;
-    font-size: 14px;
-    padding: 8px 28px 8px 28px;
-    text-decoration: none !important;
-    transition: all 500ms ease;
-}
-
-.socialBtn a:hover{
-	background: #FFFFFF;
-	color: #000000;
-    text-decoration: none;
-}
-
-.socialBtn a:focus{
-	outline-color: #FFFFFF;
-	background: #FFFFFF;
-	color: #000000;
-    text-decoration: none;
-}
-
-.hide{
-	display:none;
 }

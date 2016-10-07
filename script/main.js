@@ -1,67 +1,42 @@
 'use strict';
 
-var scr = scr || {};
-
-scr.init = function(){
-    console.log("init");
-    //scr.menu();
-    //scr.profileImage();
-    scr.mainMenu();
+const random = (nr) => {
+  return Math.floor(Math.random() * nr);
 };
 
-scr.mainMenu = function(callback){
-    var menuMove = 325;
-    var menu = document.querySelector("#menu");
-    var leftMenuButton = menu.querySelector(".leftMenuButton");
-    var rightMenuButton = menu.querySelector(".rightMenuButton");
-
-    window.addEventListener("scroll", function(e){
-
-        var scrollPos = window.pageYOffset;
-        if(scrollPos > menuMove){
-            menu.setAttribute("class", "menuFixed");
-            leftMenuButton.classList.remove("hide");
-            rightMenuButton.classList.remove("hide");
-        }else{
-            menu.removeAttribute("class", "menuFixed");
-            leftMenuButton.classList.add("hide");
-            rightMenuButton.classList.add("hide");
-        }
-    });
+const starSize = () => {
+  return Math.random() * 2;
 };
 
-scr.profileImage = function(){
-    var imageDiv = document.querySelector('.profileImage');
-    window.addEventListener('scroll', function(e){
-        var max = window.pageYOffset;
-        imageDiv.style.borderRadius = max+"px";
-    });
+const createStar = (canvas, x, y, size, start, stop) => {
+  canvas.fillStyle = '#FFFFFF';
+  canvas.beginPath();
+  canvas.arc(x, y, size, start, stop * Math.PI);
+  canvas.closePath();
+  canvas.fill();
 };
 
-scr.menu = function(){
-    var max, percent;
-    var header = document.querySelector('header');
-    var imageDiv = document.querySelector('.profileImage');
-
-    imageDiv.style.height = '1px';
-    imageDiv.style.width = '1px';
-    imageDiv.style.visibility = 'hidden';
-
-    window.addEventListener('scroll', function(e){
-        max = document.body.scrollHeight - window.innerHeight;
-        percent = (window.pageYOffset / max) * 100;
-
-        imageDiv.style.height = percent*8 +'px';
-        imageDiv.style.width = percent*8 +'px';
-        imageDiv.style.visibility = '';
-
-        if(percent === 0){
-            imageDiv.style.height = '1px';
-            imageDiv.style.width = '1px';
-            imageDiv.style.visibility = 'hidden';
-        }else if(percent > 30){
-        }
-    });
+const background = (canvasElement) => {
+  canvasElement.height = window.innerHeight;
+  canvasElement.width = window.innerWidth;
+  const canvas = canvasElement.getContext('2d');
+  console.log(window.innerWidth / 4);
+  for (let i = 0; i < (window.innerWidth / 4); i++) {
+    createStar(
+      canvas,
+      random(canvasElement.width),
+      random(canvasElement.height),
+      starSize(),
+      0, 2);
+  }
 };
 
-window.onload = scr.init;
+const init = function(){
+  const canvasElement = document.querySelector('#canvas');
+  background(canvasElement);
+  window.addEventListener('resize', function(event){
+    background(canvasElement);
+  });
+};
+
+window.onload = init;

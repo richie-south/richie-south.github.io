@@ -14,7 +14,7 @@ const starSize = () => {
 };
 
 class Star {
-  constructor(x, y, size, start, stop, color){
+  constructor(x, y, size, start, stop, color, id){
     this.x = x;
     this.y = y;
     this.size = size;
@@ -24,6 +24,7 @@ class Star {
     this.height = 60 + size;
     this.visited = false;
     this.color = color;
+    this.id = id;
   }
 
   colision(star){
@@ -44,10 +45,10 @@ class Star {
         done();
         //const audio = new Audio('./blop.mp3');
         //audio.play();
-        //createCanvasStar(canvas, star.x, star.y, star.size, star.start, star.stop, star.color);
+        //createCanvasStar(canvas, star.x, star.y, star.size, star.start, star.stop);
       }
       canvas.lineWidth = 0.2;
-      canvas.strokeStyle = /*this.color;*/ '#ff7280';
+      canvas.strokeStyle = '#ff7280';
       canvas.moveTo(this.x, this.y);
 
       canvas.lineTo(this.x + (star.x - this.x) * amount, this.y + (star.y - this.y) * amount);
@@ -68,7 +69,6 @@ const createCanvasStar = (canvas, x, y, size, start, stop, color) => {
   canvas.fill();
 };
 
-
 const connectStar = (canvas, stars, root) =>{
   stars
     .filter(star => !star.visited && root.colision(star))
@@ -77,10 +77,48 @@ const connectStar = (canvas, stars, root) =>{
       root.drawLineTo(canvas, star, connectStar.bind(null, canvas, stars, star)));
 };
 
+// const canvasClick = (canvasElement, canvas, stars) => {
+//   canvasElement.addEventListener('click', (e) => {
+//     console.log('hej');
+//     const rect = canvasElement.getBoundingClientRect();
+//     const pos = {
+//       x: e.clientX - rect.left,
+//       y: e.clientY - rect.top
+//     };
+//     const clickStar = new Star(pos.x, pos.y, 1, 0, 2, colors[Math.floor(Math.random()*colors.length)], 'mouse');
+//
+//     const inside = stars.filter(star => clickStar.colision(star));
+//
+//     connectStar(canvas, stars, inside[Math.floor(Math.random()*inside.length)]);
+//   });
+// };
+
+// const mosstConnected = (stars) => {
+//   let star;
+//   let max = 0;
+//   for (let i = 0; i < stars.length; i++) {
+//     let tmp = 0;
+//     for (let k = 0; k < stars.length; k++) {
+//       if(stars[i].colision(stars[k])){
+//         tmp++;
+//       }
+//     }
+//     if(tmp > max){
+//       max = tmp;
+//       star = stars[i];
+//
+//     }
+//   }
+//
+//   return star;
+// };
+
 const background = (canvasElement) => {
   canvasElement.height = window.innerHeight;
   canvasElement.width = window.innerWidth;
   const canvas = canvasElement.getContext('2d');
+
+
 
   const stars = [];
   for (let i = 0; i < (window.innerWidth / 4); i++) {
@@ -89,7 +127,8 @@ const background = (canvasElement) => {
       random( window.innerHeight),
       starSize(),
       0, 2,
-      colors[Math.floor(Math.random()*colors.length)]
+      colors[Math.floor(Math.random()*colors.length)],
+      i
     );
     stars.push(star);
 
@@ -102,12 +141,13 @@ const background = (canvasElement) => {
       star.stop);
   }
 
+  //connectStar(canvas, stars, mosstConnected(stars));
+  //canvasClick(canvasElement, canvas, stars);
   connectStar(canvas, stars, stars[Math.floor(Math.random()*stars.length)]);
 };
 
 const init = function(){
   const canvasElement = document.querySelector('#canvas');
-
 
   background(canvasElement);
   window.addEventListener('resize', function(event){

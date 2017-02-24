@@ -15,15 +15,15 @@ body{
 	height: 164px;
 	max-width: 164px;
 	max-height: 164px;
-	background-image: url("../img/profileImg_opt.jpg");
+	background-image: url("../img/optimized-me.jpg");
 	background-size: 100% 100%;
-  	background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	margin: auto;
 	margin-top: 20px;
 	border-radius: 50%;
 	background-color: #EA142C;
 	transition: all 500ms ease;
-	border: 1px solid white;
+	border: 8px solid white;
 }
 
 #content{
@@ -49,10 +49,10 @@ body{
 	width: auto;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
-	border-radius: 0;
 	color: #FFFFFF;
 	background: #EA142C;
-	border: 1px solid #FFFFFF;
+	border: 6px solid #FFFFFF;
+	border-radius: 30px;
 	font-size: 14px;
 	padding: 8px 28px 8px 28px;
 	text-decoration: none;

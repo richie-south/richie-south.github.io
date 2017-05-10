@@ -45,6 +45,5 @@ a:active {
 	margin-top: 20px;
 	border-radius: 50%;
 	background-color: #EA142C;
-	transition: all 500ms ease;
 	border: 2px solid white;
 }

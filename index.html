@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name='keywords' content='Richard Söderman, Richard, Söderman, Soderman, Portfolio, Hemsida, personliga hemsida, programmer, programmering, programmerare, kalmar, stockholm' />
+  <meta name='keywords' content='Richard Söderman, Richard, Söderman, Soderman, Portfolio, Hemsida, personliga hemsida, programmer, programmering, programmerare, kalmar, stockholm'
+  />
   <meta name='description' content='Richard Södermans personliga hemsida' />
   <meta name="msapplication-TileColor" content="#ea142c">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -25,38 +26,49 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
 
-  <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-  <link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px)">
+  <link href="css/style.min.css" rel="stylesheet" type="text/css" media="all">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' media="all">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel='stylesheet' type='text/css' media="all">
   <title>Richard Söderman.</title>
 </head>
 
 <body>
-  <main id="wrapper">
+  <pre id="app"> 
+    {
+      "image": <img class="profileImage" src="./img/me-min_2.jpg" />,
+      "name": "Richard Söderman",
+      "age": <span id="age">22</span>,
+      "links": {
+        "github": <a href="https://github.com/richie-south">Github</a>,
+        "npm": <a href="https://www.npmjs.com/~richie_south">NPM <3</a>,
+        "linkedin": <a href="https://www.linkedin.com/in/richard-s%C3%B6derman-89206658/">Linkedin</a>
+      },
+      "projects": [
+        {
+          "name": "Flying functions",
+          "url": <a href="https://github.com/richie-south/flying-functions">Link</a>
+        },
+        {
+          "name": "LNUroom",
+          "url": <a href="https://github.com/richie-south/LNUroom">Link</a>
+        },
+        {
+          "name": "Mood Of Twitter",
+          "url": <a href="https://github.com/richie-south/Mood_Of_Twitter">Link</a>
+        },
+        {
+          "name": "Hashtag Spotify",
+          "url": <a href="https://github.com/richie-south/hashtag_spotify">Link</a>
+        }
 
-     <section id="content">
-      <header>
-        <h1>Richard Söderman.</h1>
-        <div class="profileImage"></div>
-      </header>
-
-      <section id="portfolio">
-        <h2>Portfolio</h2>
-        <a href="https://github.com/rs222kn">Github</a>
-        <a href="https://www.npmjs.com/~richie_south">NPM</a>
-        <a href="https://www.linkedin.com/in/richard-s%C3%B6derman-89206658/">Linkedin</a>
-      </section>
-    </section> 
-
-    <section id="stars">
-    	<canvas id="canvas"></canvas>
-  	</section>
-  </main>
-
-  <!--<script src="script/main_v2.0.min.js"></script>-->
+        /* ...
+         * And many more! 
+         * Check Github ;)
+         */
+      ]
+    }
+    
+  </pre>
 </body>
 
 </html>

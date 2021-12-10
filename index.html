@@ -1,96 +1,191 @@
 <!DOCTYPE html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="keywords"
+      content="Richard Söderman, Richard, Söderman, Soderman, Portfolio, Hemsida, personliga hemsida, programmer, programmering, programmerare, kalmar, stockholm"
+    />
+    <meta name="description" content="Richard Södermans personal website" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#000000" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name='keywords' content='Richard Söderman, Richard, Söderman, Soderman, Portfolio, Hemsida, personliga hemsida, programmer, programmering, programmerare, kalmar, stockholm'
-  />
-  <meta name='description' content='Richard Södermans personal website' />
-  <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#000000">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="img/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="img/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="img/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="img/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="img/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="img/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Richard Söderman</title>
 
-  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
+    <style type="text/css">
+      body {
+        margin: 40px auto;
+        max-width: 650px;
+        line-height: 1.6;
+        font-size: 18px;
+        color: #444;
+        padding: 0 10px;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+    </style>
+  </head>
 
-  <link href="css/style.min.css" rel="stylesheet" type="text/css" media="all">
-
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel='stylesheet' type='text/css' media="all">
-  <title>Richard Söderman</title>
-</head>
-
-<body>
-  <pre id="app">
-    {
-      "image": <img class="profileImage" src="./img/me-min.jpg" />,
-      "name": "Richard Söderman",
-      "age": <span id="age">25</span>,
-      "links": {
-        "github": <a href="https://github.com/richie-south">richie-south</a>,
-        "npm": <a href="https://www.npmjs.com/~richie_south">richie_south</a>,
-        "linkedin": <a href="https://www.linkedin.com/in/richard-s%C3%B6derman-89206658/">Linkedin</a>
-      },
-      "projects": [
-        {
-          "name": "Plantr",
-          "url": <a href="https://play.google.com/store/apps/details?id=com.richardsoderman.flowers">Link (play store)</a>,
-          "url2": <a href="https://plantr.online">Link 2 (landing page)</a>,
-          "type": " app | landing page"
-        },
-        {
-          "name": "hacktoberfest",
-          "url": <a href="https://github.com/lingonsaft/hacktoberfest">Link</a>,
-          "type": "hosted community event"
-        },
-        {
-          "name": "Ultimate PI",
-          "url" <a href="https://play.google.com/store/apps/details?id=com.richardsoderman.flowers">Link (play store)</a>,
-          "url2": <a href="https://github.com/richie-south/ultimate_pi">Link 2 (code)</a>,
-          "type": "app | code"
-        },
-        {
-          "name": "CodeCardCodingCards",
-          "url": <a href="https://www.kickstarter.com/projects/lingonsaft/codecardcodingcards">Link</a>,
-          "url2": <a href="https://codecardcodingcards.richardsoderman.se/">Link</a>,
-          "type": "kickstarter"
-        },
-        {
-          "name": "Flying functions",
-          "url": <a href="https://github.com/richie-south/flying-functions">Link</a>,
-          "type": "code"
-        },
-        {
-          "name": "Mood Of Twitter",
-          "url": <a href="https://github.com/richie-south/Mood_Of_Twitter">Link</a>,
-          "type": "code"
-        },
-        {
-          "name": "Hashtag Spotify",
-          "url": <a href="https://github.com/richie-south/hashtag_spotify">Link</a>,
-          "type": "code"
-        }
-
-        /* ...
-         * And many many more!
-         * Check Github ;)
-         */
-      ]
-    }
-
-  </pre>
-</body>
-
+  <body>
+    <img class="profileImage" src="./img/me-min.jpg" />
+    <h1>Richard Söderman</h1>
+    <br />
+    <b>Links</b>
+    <ul>
+      <li><a href="https://github.com/richie-south">Github</a></li>
+      <li><a href="https://www.npmjs.com/~richie_south">Npm</a></li>
+      <li>
+        <a href="https://www.linkedin.com/in/richard-s%C3%B6derman-89206658/"
+          >Linkedin</a
+        >
+      </li>
+    </ul>
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <b>Plantr</b>
+        <div>Mobile app to keep track of your plants, built with Flutter.</div>
+        <div>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.richardsoderman.flowers"
+            >Play store</a
+          >
+        </div>
+        <a href="https://plantr.online">Landing page</a>
+      </li>
+      <li>
+        <b>Javascript-rich-string-parser</b>
+        <div>String parser utility</div>
+        <a href="https://github.com/richie-south/javascript-rich-string-parser"
+          >Repository</a
+        >
+      </li>
+      <li>
+        <b>Hacktoberfest</b>
+        <div>Hosted community event.</div>
+        <div>
+          <a href="https://github.com/lingonsaft/hacktoberfest">Repository</a>
+        </div>
+      </li>
+      <li>
+        <b>Ultimate PI</b>
+        <div>Mobile app to train on pi digits, built with flutter.</div>
+        <div>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.richardsoderman.flowers"
+            >Play store</a
+          >
+        </div>
+        <a href="https://github.com/richie-south/ultimate_pi">Repository</a>,
+      </li>
+      <li>
+        <b>CodeCardCodingCards</b>
+        <div>Failed kickstarter for physical playing cards.</div>
+        <div>
+          <a
+            href="https://www.kickstarter.com/projects/lingonsaft/codecardcodingcards"
+            >Kickstarter page</a
+          >
+        </div>
+        <a href="https://codecardcodingcards.richardsoderman.se/"
+          >Landing page</a
+        >
+      </li>
+      <li>
+        <b>Flying functions</b>
+        <div>Serverless code platform (really old project).</div>
+        <a href="https://github.com/richie-south/flying-functions"
+          >Repository</a
+        >
+      </li>
+      <li>
+        <b>Hashtag Spotify</b>
+        <div>
+          Mashhup of Tinder, Twitter and Spotify, finds spotify links on twitter
+          and presents them in a Tinder swipe format for you to find new songs
+          (really old project).
+        </div>
+        <a href="https://github.com/richie-south/hashtag_spotify">Repository</a>
+      </li>
+      <li>And many many more! Check Github :D</li>
+    </ul>
+  </body>
 </html>
